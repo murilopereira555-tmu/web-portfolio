@@ -1,0 +1,50 @@
+
+
+.card-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 columns layout on larger screens */
+    grid-template-areas:
+        "card1 card2 card3"
+        "card4 card4 card3"; /* Card 4 spans two columns, Card 3 spans two rows */
+    gap: 16px;
+    padding: 20px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/* Responsive layout adjustments */
+@media (max-width: 768px) {
+    .card-container {
+        grid-template-columns: repeat(2, 1fr); /* 2 columns for tablet */
+        grid-template-areas:
+            "card1 card2"
+            "card3 card3"
+            "card4 card5";
+    }
+}
+
+@media (max-width: 480px) {
+    .card-container {
+        grid-template-columns: 1fr; /* 1 column for mobile */
+        grid-template-areas:
+            "card1"
+            "card2"
+            "card3"
+            "card4"
+            "card5";
+    }
+}
+
+/* Assign each card to a specific area */
+.card:nth-child(1) { grid-area: card1; }
+.card:nth-child(2) { grid-area: card2; }
+.card:nth-child(3) { 
+    grid-area: card3;
+    grid-row: span 2; /* Span Card 3 over two rows */
+}
+.card:nth-child(4) { 
+    grid-area: card4;
+    grid-column: span 2; /* Span Card 4 over two columns */
+}
+.card:nth-child(5) { grid-area: card5; }
+
