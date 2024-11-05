@@ -1,3 +1,7 @@
+
+
+/* Inspiration from https://github.com/baunov/gradients-bg -- Made a few tweaks to work with react*/
+
 /* Background.css */
 html, body {
     font-family: 'Dongle', sans-serif;
@@ -17,7 +21,13 @@ html, body {
     --circle-size: 80%;
     --blending: hard-light;
   }
-  
+
+  /* Example of the keyframes for the animation */
+  @keyframes moveBackground {
+    0% { background-position: 0% 50%; }
+    100% { background-position: 100% 50%; }
+  }
+
   @keyframes moveInCircle {
     0% {
       transform: rotate(0deg);
