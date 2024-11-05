@@ -1,6 +1,5 @@
-body {
-  background-color: #000000;
-}
+
+/* Card styling*/
 
 .card {
   position: relative;
@@ -64,6 +63,11 @@ body {
   border-radius: 5px; /* Slightly rounded corners */
   padding: 5px; /* Optional: space between the image and the border */
   background-color: rgba(255, 255, 255, 0.199); /* Optional: background for visibility */
+}
+
+body.light .company-logo {
+  border-color: hsla(0, 0%, 80%, 0.425);
+  background-color: #3333334b;
 }
 
 .job-position {
@@ -257,3 +261,108 @@ body {
   color: rgba(255, 255, 255, 0.8); /* Change color on hover */
 }
 
+/* Light Theme */
+body.light {
+  background-color: #ffffff;
+  color: #000000;
+}
+
+body.light footer {
+  color: #000;
+}
+
+body.light .card {
+  background-color: #ffffff4f;
+  border: 1px solid hsl(0, 0%, 80%);
+  color: #000;
+}
+
+body.light .card .card-title {
+  color: #000;
+}
+
+body.light .card .card-text {
+  color: rgba(0, 0, 0, 0.781);
+}
+
+body.light .job-position {
+  color: #333; /* Darker color for light mode */
+}
+
+body.light .company-name {
+  color: rgba(0, 0, 0, 0.8); /* Lighter color for company name */
+}
+
+/* Dark Theme */
+body.dark {
+  background-color: #333333;
+  color: #ffffff;
+}
+
+body.dark footer {
+  color: #fff;
+}
+
+body.dark .card {
+  background-color: rgba(51, 51, 51, 0.8); /* Darker background for cards */
+  border: 1px solid hsl(0, 0%, 40%);
+  color: #fff;
+}
+
+body.dark .card .card-title {
+  color: rgb(255, 255, 255);
+}
+
+body.dark .card .card-text {
+  color: rgba(255, 255, 255, 0.781);
+}
+
+body.dark .job-position {
+  color: #fff; /* Light color for dark mode */
+}
+
+body.dark .company-name {
+  color: rgba(255, 255, 255, 0.8); /* Light color for company name */
+}
+
+body.dark .divider {
+  background-color: rgba(255, 255, 255, 0.3);
+}
+
+/* Navigation Bar */
+body.light .navigation-bar {
+  background-color: #ffffff38;
+}
+
+body.dark .navigation-bar {
+  background-color: #5a5a5a88;
+}
+
+body.light .nav-logo, 
+body.light .nav-item a {
+  color: #000;
+}
+
+body.dark .nav-logo, 
+body.dark .nav-item a {
+  color: #fff;
+}
+
+/* Additional styles for the dark theme */
+body.dark .card-expanded {
+  background-color: #222;
+}
+
+body.dark .close-button {
+  color: #fff;
+}
+
+/*Theme button positioning */
+.theme-button {
+  position: fixed; /* Fix the button's position */
+  bottom: 20px; /* Distance from the bottom */
+  right: 20px; /* Distance from the right */
+  z-index: 1000; /* Ensure it's above other elements */
+  padding: 10px; /* Padding inside the button */
+  cursor: pointer; /* Change cursor to pointer */
+}

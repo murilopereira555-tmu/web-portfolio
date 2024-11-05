@@ -1,0 +1,92 @@
+/* Wrapper for the toggle switch */
+.theme-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
+  }
+  
+  .theme-button input[type="checkbox"] {
+    display: none; /* Hide the checkbox */
+  }
+  
+  /* Style for the toggle label to look like a slider */
+  .theme-button .toggle-label {
+    position: relative;
+    width: 60px;
+    height: 30px;
+    background-color: #ccc; /* Light mode background */
+    border-radius: 30px; /* Rounded corners */
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2); /* Subtle shadow */
+  }
+  
+  /* Style for the toggle ball (sliding circle) */
+  .theme-button .toggle-ball {
+    position: absolute;
+    top: 50%; /* Center vertically */
+    left: 3px; /* Distance from left */
+    width: 24px; /* Width of the ball */
+    height: 24px; /* Height of the ball */
+    background-color: #ffffff; /* Ball color */
+    border-radius: 50%; /* Circular shape */
+    display: flex; /* Enable flexbox */
+    align-items: center; /* Center items vertically */
+    justify-content: center; /* Center items horizontally */
+    transition: transform 0.3s ease, background-color 0.3s ease;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2); /* Shadow for depth */
+    transform: translateY(-50%); /* Adjust for exact vertical centering */
+  }
+  
+  /* Icon style */
+  .icon {
+    width: 16px; /* Icon width */
+    height: 16px; /* Icon height */
+    transition: opacity 0.3s ease; /* Smooth transition */
+  }
+  
+  /* Positioning for the icons */
+  .sun-icon {
+    margin-left: -2px; /* Adjust left position */
+  }
+  
+  .moon-icon {
+    margin-right: -2px; /* Adjust right position */
+  }
+  
+  /* Show or hide icons based on theme */
+  .visible {
+    opacity: 1; /* Fully visible */
+  }
+  
+  .hidden {
+    opacity: 0; /* Hidden */
+  }
+  
+  /* Dark mode style for label background */
+  .theme-button input[type="checkbox"]:checked + .toggle-label {
+    background-color: #4a4a4a; /* Dark mode background */
+  }
+  
+  /* Toggle ball style in dark mode */
+  .theme-button input[type="checkbox"]:checked + .toggle-label .toggle-ball {
+    transform: translate(30px, -50%); /* Slide ball to the right while keeping vertical centering */
+    background-color: #f0f0f0; /* Ball color in dark mode */
+  }
+  .theme-button .toggle-ball .icon {
+    width: 16px; /* Keep icon size */
+    height: 16px; /* Keep icon size */
+    transition: opacity 0.3s ease; /* Smooth transition */
+    position: absolute; /* Position icons absolutely within the ball */
+  }
+  
+  /* Sun Icon Positioning */
+  .theme-button .toggle-ball .sun-icon {
+    left: 6px; /* Adjust left position to center sun icon */
+  }
+  
+  /* Moon Icon Positioning */
+  .theme-button .toggle-ball .moon-icon {
+    right: 6px; /* Adjust right position to center moon icon */
+  }
