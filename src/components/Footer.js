@@ -9,7 +9,8 @@ function Footer(){
             
             <ThemeButton/>
 
-            <p className="copyright">&copy; {new Date().getFullYear()} Murilo Pereira</p> {/*This returns the current year and adds it to the footer paragraph element*/}
+            <p className="copyright">&copy; {new Date().getFullYear()} Murilo Pereira</p>
+            <p className="email">murilo.pereira@torontomu.ca</p> {/*This returns the current year and adds it to the footer paragraph element*/}
 
         </footer>
 
