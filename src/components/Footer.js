@@ -5,12 +5,13 @@ function Footer(){
 
     return(
 
-        <footer>
+        <footer className ="footer">
             
-            <ThemeButton/>
-
-            <p className="copyright">&copy; {new Date().getFullYear()} Murilo Pereira</p>
-            <p className="email">murilo.pereira@torontomu.ca</p> {/*This returns the current year and adds it to the footer paragraph element*/}
+            <div className="footer-content">
+                <ThemeButton/>
+                <p className="copyright">&copy; {new Date().getFullYear()} Murilo Pereira</p>
+                <p className="email">murilo.pereira@torontomu.ca</p> {/*This returns the current year and adds it to the footer paragraph element*/}
+            </div>
 
         </footer>
 
