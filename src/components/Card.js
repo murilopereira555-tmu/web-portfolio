@@ -1,7 +1,11 @@
 import React, { useState } from 'react';
 
-function Card({ image, name, description, expandedtext, images = [], jobPositions = [], cardType }) {
+import AudioPlayer from './AudioPlayer';
+
+function Card({ image, name, description, expandedtext, images = [], jobPositions = [], cardType, includeAudio }) {
     const [isExpanded, setIsExpanded] = useState(false);
+
+    const [showAltText, setShowAltText] = useState(false); 
 
     const toggleExpanded = () => {
         setIsExpanded(true);
@@ -10,6 +14,10 @@ function Card({ image, name, description, expandedtext, images = [], jobPosition
     const closeCard = (e) => {
         e.stopPropagation();
         setIsExpanded(false);
+    };
+
+    const toggleAltText = () => {
+        setShowAltText(!showAltText); // Toggle alt text visibility
     };
 
     return (
@@ -44,12 +52,28 @@ function Card({ image, name, description, expandedtext, images = [], jobPosition
                     <div className="additional-images">
                         {images.map((image, index) => (
                             <div className="image-content" key={index}>
-                                <img src={image.url} alt={`Image ${index + 1}`} className="extra-image" />
-                                <div className="image-title">{image.title}</div>
-                                <div className="image-description">{image.description}</div>
+                                <div className="image-wrapper">
+                                    <img src={image.url} alt={image.altText} className="extra-image" />
+                                    <div className="image-details">
+                                        <div className="image-title">{image.title}</div>
+                                        <div className="image-description">{image.description}</div>
+                                        {showAltText && (
+                                            <div className="image-alt-text">Alt Text: {image.altText}</div>
+                                        )}
+                                    </div>
+                                </div>
                             </div>
                         ))}
                     </div>
+
+                    {/* Conditionally render AudioPlayer if includeAudio is true */}
+                    {includeAudio && <AudioPlayer />}
+
+                     {/* Button to toggle visibility of alt text */}
+                     <button onClick={toggleAltText} className="alt-text-toggle-button">
+                        {showAltText ? 'Hide Alt Text' : 'Show Alt Text'}
+                    </button>
+
                 </div>
             )}
             <div className="card-arrow">➔</div>
@@ -64,7 +88,8 @@ Card.defaultProps = {
     description: "[insert description]",
     images: [],
     jobPositions: [], // Default to an empty array for job positions
-    cardType: "default" // Default card type to ensure compatibility
+    cardType: "default", // Default card type to ensure compatibility
+    includeAudio: false
 };
 
 export default Card;

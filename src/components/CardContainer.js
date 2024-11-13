@@ -12,7 +12,7 @@ function CardContainer() {
                 { 
                     url: "https://via.placeholder.com/100", 
                     title: "First Image", 
-                    description: "This is a paragraph for the first image." 
+                    description: "This is a paragraph for the first image.",
                 },
                 { 
                     url: "https://via.placeholder.com/100", 
@@ -30,14 +30,14 @@ function CardContainer() {
                     description: "This is a paragraph for the fourth image." 
                 }
             ],
-            cardType: "about-me" // Add type for styling
+            cardType: "about-me", // Added type for styling
         },
         {
             image: "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9f/TMU_logo.svg/800px-TMU_logo.svg.png",
             name: "Education",
             description: "Description for Education card.",
             images: [],
-            cardType: "education" // Add type for styling
+            cardType: "education" // Added type for styling
         },
         {
             name: "Professional Experience",
@@ -65,13 +65,34 @@ function CardContainer() {
                     companyLogo: "https://cdn.thespike.gg/Teams%252010%2FTMU%20ESPORTS_1668436249432.png",
                 },
             ],
-            cardType: "professional-experience" // Add type for styling
+            cardType: "professional-experience" // Added type for styling
         },
         {
+            //Used this for L8
+            //Decided to use image links to discord because it is much easier to import liek this on react.
             name: "Projects",
-            description: "Description for Projects card.",
-            images: [],
-            cardType: "projects" // Add type for styling
+            description: "My Submission items for L8. Accessibility",
+            expandedtext: "Here are my images, alt text, and audio player",
+            images: [{ 
+                url: "https://cdn.discordapp.com/attachments/1108482530417594461/1306057478772887652/IMG_0477.jpg?ex=67354850&is=6733f6d0&hm=28beb7dce21599162107bcf5c78725a59c04c94a0b30b85fba145d66326444ea&", 
+                title: "View from My Appartment in Toronto", 
+                description: "Date: Nov 10th, 2024",
+                altText: "The Toronto city skyline in the nightime rain with several apartment buildings that have a few units with their lights on, below there is some light trafic on the roads."
+            },
+            { 
+                url: "https://media.discordapp.net/attachments/1108482530417594461/1306057479498498180/IMG_0466.jpg?ex=67354850&is=6733f6d0&hm=f6eca4d07f88d37616fa04d0441733e774e9a55e6e59f89f9287a14c4739b0f4&=&format=webp&width=507&height=676", 
+                title: "Coffee Cupping event at Subtext Roasters", 
+                description: "Date: Nov 9th, 2024",
+                altText: "A table at the forefront with multiple ceramic cups for coffee tasting. A woman in the background is pouring water into the cups from a kettle."
+            },
+            { 
+                url: "https://media.discordapp.net/attachments/1108482530417594461/1306057480253734974/IMG_0450.jpg?ex=67354850&is=6733f6d0&hm=5ee1eadf5ae46f2110b3e599e14a86469556726826fd80d575ca11675424125b&=&format=webp&width=507&height=676", 
+                title: "Homemade Sushi", 
+                description: "Date: Nov 6th, 2024",
+                altText: "A white plate with multiple salmon sushi rolls topped with micro green vegetables along with 2 salmon nigiri pieces topped with green onions."
+            }],
+            cardType: "projects", // Added type for styling
+            includeAudio: true
         },
     ];
 
@@ -83,9 +104,11 @@ function CardContainer() {
                     image={card.image}
                     name={card.name}
                     description={card.description}
+                    expandedtext={card.expandedtext}  // Pass expanded text if any
                     images={card.images} // Pass images with titles and descriptions
-                    cardType={card.cardType} // Pass the card type for styling
                     jobPositions={card.jobPositions} // Pass job positions
+                    cardType={card.cardType} // Pass the card type for styling
+                    includeAudio={card.includeAudio} // Pass includeAudio flag
                 />
             ))}
         </div>

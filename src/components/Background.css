@@ -122,3 +122,44 @@ html, body {
     animation: moveInCircle 40s linear infinite; /* Ensure this animation is defined */
 }
 
+/*Contrast modes for bg*/
+.high-contrast {
+  background: white !important; /* Override gradient with solid white */
+  animation: none !important; /* Stop animations */
+}
+
+.high-contrast .g1,
+.high-contrast .g2,
+.high-contrast .g3,
+.high-contrast .interactive {
+  display: none; /* Hide animated background elements */
+}
+
+/* High contrast background and text colors */
+.high-contrast {
+  background-color: rgb(0, 0, 0) !important; /* Set background to white */
+  animation: none !important; /* Disable animations */
+  color: black !important; /* Set text color to black */
+}
+
+/* Ensure all text on your page gets the high-contrast colors */
+.high-contrast body,
+.high-contrast h1, 
+.high-contrast h2,
+.high-contrast h3, 
+.high-contrast h4, 
+.high-contrast h5, 
+.high-contrast h6,
+.high-contrast p,
+.high-contrast a,
+.high-contrast .card-container {
+  color: rgb(75, 204, 255) !important; /* Change all text color to black */
+  background-color: rgb(0, 0, 0) !important; /* Set background to white */
+}
+
+/* Optional: Button styling for high contrast */
+.high-contrast .theme-button {
+  background-color: black !important;
+  color: white !important;
+  border: 2px solid white;
+}

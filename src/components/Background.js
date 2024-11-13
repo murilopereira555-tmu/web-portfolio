@@ -1,10 +1,10 @@
 // Background.js
 import React from 'react';
-import './Background.css'; // Make sure to create this CSS file
+import './Background.css';
 
-const Background = () => {
+const Background = ({ isHighContrast }) => {
   return (
-    <div className="gradient-bg">
+    <div className={`gradient-bg ${isHighContrast ? 'high-contrast' : ''}`}>
       <div className="g1"></div>
       <div className="g2"></div>
       <div className="g3"></div>

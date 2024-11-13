@@ -100,6 +100,7 @@ body.light .company-logo {
   background-color: #000000; /* Background color */
   display: flex; /* Use flexbox for layout */
   flex-direction: column; /* Stack items vertically */
+  overflow-x: hidden;
 }
 
 /* Divider styles */
@@ -137,12 +138,15 @@ body.light .company-logo {
 .card-expanded .card-extra-content {
   margin-left: 20%; /* Offset text to align with the title */
   color: #888;
+  
 }
 
+
+/*Expanded Card images*/
 .card-expanded .additional-images {
   display: flex;                          /* Use flexbox for layout */
   justify-content: center;                /* Center images horizontally */
-  gap: 100px;                              /* Adjust gap between images as needed */
+  gap: 50px;                              /* Adjust gap between images as needed */
   margin-top: 10px;                      /* Margin from the main image */
   padding: 0 10px;                       /* Optional padding on the sides */
 }
@@ -178,7 +182,9 @@ body.light .company-logo {
 }
 
 .card-expanded .extra-image {
-  border: 1px solid rgb(121, 121, 121); /* For testing visibility */
+  border: 1px solid rgb(121, 121, 121);
+  max-width: 300px;
+  max-height: 300px; /* For testing visibility */
 }
 
 .card-arrow {
@@ -340,6 +346,8 @@ body.dark .divider {
   background-color: rgba(255, 255, 255, 0.3);
 }
 
+
+
 /* Navigation Bar */
 body.light .navigation-bar {
   background-color: #ffffff38;
@@ -368,10 +376,10 @@ body.dark .close-button {
   color: #fff;
 }
 
-/*Theme button positioning */
 
 
 
+/*Footer elements*/
 
 footer {
   display: flex;
@@ -403,4 +411,138 @@ footer {
   margin-left: auto;
   margin-right: 37px; 
   color: white; /*Left white until background dark mode update */
+}
+
+/*High contrast mode*/
+.high-contrast body,
+.high-contrast h1, 
+.high-contrast h2,
+.high-contrast h3, 
+.high-contrast h4, 
+.high-contrast h5, 
+.high-contrast h6,
+.high-contrast p,
+.high-contrast a,
+.high-contrast .card-container {
+  color: rgb(75, 204, 255) !important; /* Change all text color to black */
+  background-color: rgb(0, 0, 0) !important; /* Set background to white */
+}
+
+/* Optional: Button styling for high contrast */
+.high-contrast .theme-button {
+  background-color: black !important;
+  color: white !important;
+  border: 2px solid white;
+}
+
+/*Alt text button*/
+.alt-text-toggle-button {
+  position: absolute; /* Position the button absolutely */
+  bottom: 10px; /* Adjust bottom position */
+  left: 10px; /* Adjust left position */
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.alt-text-toggle-button:hover {
+  background-color: #0056b3;
+}
+
+/*Alt Text Styling*/
+.image-alt-text {
+  font-style: italic;
+  color: #666;
+}
+
+/*For project card L8*/
+/* Apply styles only to project cards */
+
+.projects .additional-images {
+  display: flex;
+  flex-direction: column;
+  gap: 20px; /* Space between image blocks */
+  align-items: flex-start; /* Align everything to the left */
+  overflow-x: hidden; /* Prevent horizontal overflow */
+  width: 100%; /* Ensure content takes full width */
+}
+
+.projects .image-wrapper {
+  display: flex;
+  align-items: flex-start; /* Align images and text to the left */
+  gap: 20px; /* Space between image and text */
+  width: 100%; /* Ensure the wrapper takes full width */
+  overflow-x: hidden; /* Prevent horizontal overflow */
+}
+
+.projects .extra-image {
+  width: 200px; /* Increase the image size */
+  max-height: 200px ; /* Maintain aspect ratio */
+  margin-right: 15px; /* Space between image and text */
+  max-width: 100%; /* Ensure image does not overflow its container */
+}
+
+.projects .image-details {
+  display: flex;
+  flex-direction: column;
+  gap: 5px; /* Space between title, description, and alt text */
+  min-width: 200px; /* Ensure there's a minimum width for text area */
+  text-align: left; /* Align text to the left */
+  overflow-x: hidden; /* Prevent overflow */
+}
+
+.projects .image-title {
+  font-weight: bold;
+  font-size: 1.1em; /* Increase font size for titles */
+  margin-bottom: 5px;
+}
+
+.projects .image-description {
+  font-size: 1em; /* Slightly larger font size */
+  color: #555;
+}
+
+.projects .image-alt-text {
+  font-size: 0.9em; /* Adjust alt text font size */
+  color: #888;
+  max-height: 30px; /* Limit the height */
+  overflow: hidden; /* Hide text when not shown */
+  transition: max-height 0.3s ease-out;
+}
+
+.projects .alt-text-toggle-button {
+  margin-top: 10px;
+  padding: 5px 10px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+.projects .alt-text-toggle-button:hover {
+  background-color: #0056b3;
+}
+
+/* Ensure the button aligns correctly */
+.projects .alt-text-toggle-button {
+  position: relative;
+  margin-top: 10px;
+  z-index: 1; /* Ensure it's above other elements */
+}
+
+/* Adjust layout for better spacing and alignment */
+.projects .card-extra-content {
+  padding: 10px;
+  width: 100%; /* Ensure content takes up the full width */
+  overflow-x: hidden; /* Prevent horizontal overflow */
+}
+
+.projects .audio-card {
+  width: 100%; /* Make sure the audio player is responsive */
+  max-width: 500px; /* Limit the max width to prevent overflow */
+  margin-top: 20px; /* Add some space between the images and the audio player */
+  box-sizing: border-box; /* Include padding and borders in the width calculation */
 }

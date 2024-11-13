@@ -1,0 +1,18 @@
+
+.high-contrast {
+    background-color: #000000;
+    color: #ffffff;
+}
+
+/*Specific to the gradient elemnt*/
+
+.high-contrast .gradient-bg {
+    background: black; 
+}
+.high-contrast .g1, 
+.high-contrast .g2, 
+.high-contrast .g3, 
+.high-contrast .interactive {
+    background: radial-gradient(circle at center, white 0, black 50%) no-repeat;
+    opacity: 0.8; 
+}
