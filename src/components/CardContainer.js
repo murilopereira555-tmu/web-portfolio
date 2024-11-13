@@ -75,19 +75,19 @@ function CardContainer() {
             expandedtext: "Here are my images, alt text, and audio player",
             images: [{ 
                 url: "https://cdn.discordapp.com/attachments/1108482530417594461/1306057478772887652/IMG_0477.jpg?ex=67354850&is=6733f6d0&hm=28beb7dce21599162107bcf5c78725a59c04c94a0b30b85fba145d66326444ea&", 
-                title: "View from My Appartment in Toronto", 
+                title: "View from My Appartment, Toronto", 
                 description: "Date: Nov 10th, 2024",
                 altText: "The Toronto city skyline in the nightime rain with several apartment buildings that have a few units with their lights on, below there is some light trafic on the roads."
             },
             { 
                 url: "https://media.discordapp.net/attachments/1108482530417594461/1306057479498498180/IMG_0466.jpg?ex=67354850&is=6733f6d0&hm=f6eca4d07f88d37616fa04d0441733e774e9a55e6e59f89f9287a14c4739b0f4&=&format=webp&width=507&height=676", 
-                title: "Coffee Cupping event at Subtext Roasters", 
+                title: "Coffee Cupping event at Subtext Roasters, Toronto", 
                 description: "Date: Nov 9th, 2024",
                 altText: "A table at the forefront with multiple ceramic cups for coffee tasting. A woman in the background is pouring water into the cups from a kettle."
             },
             { 
                 url: "https://media.discordapp.net/attachments/1108482530417594461/1306057480253734974/IMG_0450.jpg?ex=67354850&is=6733f6d0&hm=5ee1eadf5ae46f2110b3e599e14a86469556726826fd80d575ca11675424125b&=&format=webp&width=507&height=676", 
-                title: "Homemade Sushi", 
+                title: "Homemade Sushi, Toronto", 
                 description: "Date: Nov 6th, 2024",
                 altText: "A white plate with multiple salmon sushi rolls topped with micro green vegetables along with 2 salmon nigiri pieces topped with green onions."
             }],
