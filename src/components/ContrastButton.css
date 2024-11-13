@@ -1,7 +1,7 @@
 
 .high-contrast {
     background-color: #000000;
-    color: #ffffff;
+    color: #00ccff;
 }
 
 /*Specific to the gradient elemnt*/
@@ -16,3 +16,4 @@
     background: radial-gradient(circle at center, white 0, black 50%) no-repeat;
     opacity: 0.8; 
 }
+
