@@ -159,6 +159,11 @@ body.light .company-logo {
   margin-left: 20%;
 }
 
+/*Light mode job desc*/
+body.light .job-description {
+  color:hsl(0, 0%, 24%);
+}
+
 .card-expanded .job-position-info {
   border-top: 1px solid #444;
   padding-top: 20px;
@@ -664,6 +669,67 @@ footer {
   box-sizing: border-box; 
 }
 
-.educaton .alt-text-toggle-button {
-  visibility: hidden;
+
+/*Styling for the education table*/
+.education-table {
+  margin: 30px;
+  padding: 10px;
+  border: 1px solid #ccc; /* Light border for the table */
+  border-radius: 8px; /* Subtle background */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Add a soft shadow */
+}
+
+.education-table h3 {
+  color: #333; /* Text color for the heading */
+  font-size: 1.5em;
+  text-align: center;
+  font-weight: bold;
+}
+
+.education-table table {
+  width: 100%;
+  border-collapse: collapse; /* Merge borders */
+  text-align: left;
+  font-size: 0.9em;
+  background-color: #fff; /* Table background */
+}
+
+.education-table th, 
+.education-table td {
+  padding: 12px 15px; /* Padding for cells */
+  border: 1px solid #ddd; /* Light borders between cells */
+}
+
+.education-table th {
+  background-color:hsl(0, 0%, 24%); /* Header background */
+  color: white; /* Header text color */
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.education-table tr:nth-child(even) {
+  background-color: #f2f2f2; /* Zebra striping for rows */
+}
+
+.education-table tr:hover {
+  background-color: #ddd; /* Highlight row on hover */
+}
+
+.education-table a {
+  color: #206eff; /* Link color */
+  text-decoration: none; /* Remove underline */
+  font-weight: bold;
+}
+
+.education-table a:hover {
+  text-decoration: underline; /* Add underline on hover */
+}
+
+/*Dark mode styling for table*/
+body.dark .education-table h3 {
+  color: #ffffff;
+}
+
+body.dark .education-table table{
+  color:hsl(0, 0%, 40%);
 }

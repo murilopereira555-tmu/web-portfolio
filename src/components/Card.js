@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import AudioPlayer from './AudioPlayer';
 
 
-function Card({ image, name, description, expandedtext, images = [], jobPositions = [], cardType, includeAudio }) {
+function Card({ image, name, description, expandedtext, images = [], jobPositions = [], cardType, includeAudio, courses }) {
     const [isExpanded, setIsExpanded] = useState(false);
 
     const [showAltText, setShowAltText] = useState(false); 
@@ -79,6 +79,35 @@ function Card({ image, name, description, expandedtext, images = [], jobPosition
 
                     {/* Conditionally render AudioPlayer if includeAudio is true */}
                     {includeAudio && <AudioPlayer />}
+                        
+                    {/* Education Table */}
+                    {cardType === "education" && courses.length > 0 && (
+                        <div className="education-table">
+                            <h3>Relevant Courses</h3>
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>Course Code</th>
+                                        <th>Course Name</th>
+                                        <th>Applicable Skills</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    {courses.map((course, index) => (
+                                        <tr key={index}>
+                                            <td>
+                                                <a href={course.link} target="_blank" rel="noopener noreferrer">
+                                                    {course.code}
+                                                </a>
+                                            </td>
+                                            <td>{course.name}</td>
+                                            <td>{course.skills}</td>
+                                        </tr>
+                                    ))}
+                                </tbody>
+                            </table>
+                        </div>
+                    )}
 
                      {/* Button to toggle visibility of alt text */}
                      <button onClick={toggleAltText} className="alt-text-toggle-button">

@@ -37,7 +37,13 @@ function CardContainer() {
             name: "Education",
             description: "5th Year BTM Co-op Student",
             images: [],
-            cardType: "education" // Added type for styling
+            expandedtext: "As a Business Technology Management Student, I am heavily involved with innovative technology and its intersection with business applications.",
+            courses: [
+                { code: "CS101", name: "Introduction to Computer Science", skills: "Programming, Problem-solving", link: "https://example.com/cs101" },
+                { code: "MATH201", name: "Linear Algebra", skills: "Matrix Operations, Vector Spaces", link: "https://example.com/math201" },
+                { code: "PHIL303", name: "Metaphysics", skills: "Critical Thinking, Logical Analysis", link: "https://example.com/phil303" }
+            ],
+            cardType: "education" // Added type to ensure courses are added
         },
         {
             name: "Professional Experience",
@@ -111,7 +117,8 @@ function CardContainer() {
                     images={card.images} // Pass images with titles and descriptions
                     jobPositions={card.jobPositions} // Pass job positions
                     cardType={card.cardType} // Pass the card type for styling
-                    includeAudio={card.includeAudio} // Pass includeAudio flag
+                    includeAudio={card.includeAudio}
+                    courses={card.courses || []} // Pass includeAudio flag
                 />
             ))}
         </div>
