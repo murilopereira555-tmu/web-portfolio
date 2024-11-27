@@ -90,9 +90,9 @@ body.light .company-logo {
   position: fixed; /* Fixed position to center on the screen */
   top: 0; /* Reset top */
   left: 0; /* Reset left */
-  width: 94.5vw; /* Full width */
-  height: 90vh; /* Full height */
-  padding: 40px;
+  width: 98vw; /* Scaled to be relative to window size */
+  height: 95vh; /* Scaled to be relative to window size */
+  padding: 0px; /* Removed the padding since it led to innacuracy with different window sizes */
   border-radius: 10px;
   box-shadow: none; /* Remove shadow */
   overflow-y: auto; /* Allow vertical scrolling */
@@ -100,7 +100,68 @@ body.light .company-logo {
   background-color: #000000; /* Background color */
   display: flex; /* Use flexbox for layout */
   flex-direction: column; /* Stack items vertically */
-  overflow-x: hidden;
+  overflow-x: hidden; /* Stop horizontal scrolling*/
+}
+
+.card-expanded .job-info {
+  margin-left: 10%;
+}
+
+.card-expanded .company-logo {
+  width: 100px; /* Adjust size as needed */
+  height: auto; /* Keep aspect ratio */
+  margin-right: 20px; /* Space between logo and text */
+  border: 1px solid #fff; /* White border around the logo */
+  border-radius: 5px; /* Slightly rounded corners */
+  padding: 5px; /* Optional: space between the image and the border */
+  background-color: rgba(255, 255, 255, 0.199); /* Optional: background for visibility */
+}
+
+/* Job Description (only visible in expanded view) */
+.job-description {
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+/* Job Description (only visible in expanded view) */
+.job-description {
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.8);
+  padding-left: 20px;
+}
+
+/* Styles only for when the card is expanded */
+
+/* Adjustments for expanded view job info */
+.card-expanded .job-info {
+  margin-left: 10%;  /* Indent job info to the right in expanded view */
+}
+
+.card-expanded .job-position-info {
+  display: flex; /* Use flexbox for alignment */
+  align-items: center; /* Center vertically */
+  border-color: white;
+}
+
+/* Expanded Job Position and Company Styling */
+.card-expanded .job-position {
+  font-size: 22px; /* Larger font for the job title */
+  color: #fff;  /* Ensure the job title is readable */
+}
+
+/* Adjust description style for clarity in expanded view */
+.card-expanded .job-description {
+  font-size: 15px;
+  color: #ccc; /* Light color for description */
+  padding-left: 20px; 
+  padding-bottom: 20px;/* Indentation for better alignment */
+  margin-right: 20%;
+  margin-left: 20%;
+}
+
+.card-expanded .job-position-info {
+  border-top: 1px solid #444;
+  padding-top: 20px;
 }
 
 /* Divider styles */
@@ -130,7 +191,8 @@ body.light .company-logo {
 
 /* Additional styling adjustments for other elements */
 .card-expanded .card-title {
-  margin-left: 20%; /* Offset title to the right of the image */
+  margin-left: 20%;
+  margin-top: 25px; /* Offset title to the right of the image */
   font-size: 1.5em; /* Adjust font size */
 }
 
@@ -217,19 +279,16 @@ body.light .company-logo {
 
 .close-button {
   position: absolute; /* Position it relative to the card */
-  top: 10px; /* Adjust as needed */
-  right: 10px; /* Adjust as needed */
+  top: 2%; /* Adjust as needed */
+  right: 2%; /* Adjust as needed */
   background: none; /* No background */
   border: none; /* No border */
-  font-size: 24px; /* Font size for the X */
+  font-size: 30px; /* Font size for the X */
   color: white; /* Color of the X */
   cursor: pointer; /* Pointer cursor on hover */
   z-index: 1001; /* Ensure it is above other elements */
 }
 
-.close-button:hover {
-  color: rgba(196, 196, 196, 0.8); /* Darker color on hover for better visibility */
-}
 
 /* Navigation bar components */
 .navigation-bar {
@@ -270,6 +329,32 @@ body.light .company-logo {
   transition: color 0.3s ease; /* Smooth color transition */
 }
 
+.contact-button {
+  background: none;
+  border: none;
+  color: inherit; /* Matches the color of links */
+  font: inherit; /* Ensures the font matches links */
+  cursor: pointer; /* Pointer cursor for hover effect */
+  padding: 0; /* Removes default padding */
+  margin: 0; /* Removes default margin */
+  line-height: 1; /* Ensures consistent height with links */
+  text-decoration: none; /* Matches link styling */
+}
+
+.contact-button:hover {
+  text-decoration: none;
+  color: #007bff; /* Same hover effect as links */
+}
+
+.nav-item {
+  display: flex;
+  align-items: center; /* Ensures consistent vertical alignment */
+  margin-left: 20px;
+}
+
+.nav-item a:hover {
+  color: rgba(255, 255, 255, 0.8); /* Change color on hover */
+}
 .nav-item a:hover {
   color: rgba(255, 255, 255, 0.8); /* Change color on hover */
 }
@@ -577,4 +662,8 @@ footer {
   max-width: 500px; /* Limit the max width to prevent overflow */
   margin-top: 20px; /* Add some space between the images and the audio player */
   box-sizing: border-box; 
+}
+
+.educaton .alt-text-toggle-button {
+  visibility: hidden;
 }

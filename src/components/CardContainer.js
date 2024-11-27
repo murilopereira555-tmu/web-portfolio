@@ -7,7 +7,7 @@ function CardContainer() {
         {
             image: "https://media.licdn.com/dms/image/v2/D5603AQFNm_A77PZh0w/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1680680808569?e=1736380800&v=beta&t=nvvUBEMlHxzLfWvgBiwxIcNqJRoEBau4tZItR0_BQaI",
             name: "About Me",
-            description: "5th Year BTM Co-op Student",
+            description: "Experienced and Passionate Leader",
             images: [
                 { 
                     url: "https://via.placeholder.com/100", 
@@ -35,24 +35,26 @@ function CardContainer() {
         {
             image: "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9f/TMU_logo.svg/800px-TMU_logo.svg.png",
             name: "Education",
-            description: "Description for Education card.",
+            description: "5th Year BTM Co-op Student",
             images: [],
             cardType: "education" // Added type for styling
         },
         {
             name: "Professional Experience",
-            description: "High-level info about the position.",
+            description: "These are some of the companies I have worked with!",
             images: [],
             jobPositions: [
                 {
                     position: "Experienced Consultant",
                     companyName: "Cyber Risk & Emerging Tech",
                     companyLogo: "https://upload.wikimedia.org/wikipedia/commons/f/f2/Logo-pwc.png",
+                    description: "Worked directly with clients to perfrom cyber security maturity assessments and provide actionable recomendations on improving security posture.",
                 },
                 {
                     position: "Product Manager",
                     companyName: "Avenue Eco",
                     companyLogo: "https://blog.avenuecode.com/hs-fs/hubfs/Avenue%20Code%20New%20Logos%20-%202023/Avenue%20Code-primary%20versions_logo%20white%20avenue%20code%20endorsement%202.png?width=1180&name=Avenue%20Code-primary%20versions_logo%20white%20avenue%20code%20endorsement%202.png",
+                    description: "Within a start-up environment, I successfuly produced results in an agile manner, developing highly detailed user stories and requirements for new features. In particular, I was responsible for the development of a skill matrix function, allowing managers to track the skills of their workforce."
                 },
                 {
                     position: "Systems Analyst",
@@ -65,6 +67,7 @@ function CardContainer() {
                     companyLogo: "https://cdn.thespike.gg/Teams%252010%2FTMU%20ESPORTS_1668436249432.png",
                 },
             ],
+            expandedtext: "An experienced and passionate leader who enjoys working in fast paced collaborative team environments to build strong working relationships, develop innovative strategies, and achieve success.",
             cardType: "professional-experience" // Added type for styling
         },
         {

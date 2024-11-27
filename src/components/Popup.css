@@ -1,0 +1,108 @@
+/* Popup.css */
+.popup-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+  }
+  
+  .popup-content {
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    width: 90%; /* Adaptable for smaller screens */
+    max-width: 500px;
+    position: relative;
+  }
+  
+  .popup-close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: rgb(85, 85, 85);
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+  }
+  form {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  form div {
+    margin-bottom: 15px;
+  }
+  
+  label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+  }
+  
+  input,
+  textarea {
+    width: 95%;
+    padding: 8px;
+    margin-right: 5%;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  button {
+    margin-right: 10px;
+    padding: 8px 12px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  button:hover {
+    background-color: #0056b3;
+  }
+  
+  .success-message {
+    color: green;
+    font-size: 16px;
+    margin-top: 20px;
+    text-align: center;
+  }
+
+  /* Light theme */
+.light .popup-content {
+    background-color: white;
+    color: black;
+  }
+  
+  .light .popup-overlay {
+    background-color: rgba(255, 255, 255, 0.8); /* Light overlay */
+  }
+  
+  /* Dark theme */
+  .dark .popup-content {
+    background-color: #333;
+    color: white;
+  }
+  
+  .dark .popup-overlay {
+    background-color: rgba(0, 0, 0, 0.8); /* Dark overlay */
+  }
+  
+  /* High contrast theme */
+  .high-contrast .popup-content {
+    background-color: #000;
+    color: yellow;
+  }
+  
+  .high-contrast .popup-overlay {
+    background-color: rgba(255, 255, 255, 0.8); /* High contrast overlay */
+  }
+  

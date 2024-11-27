@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 
 import AudioPlayer from './AudioPlayer';
 
+
 function Card({ image, name, description, expandedtext, images = [], jobPositions = [], cardType, includeAudio }) {
     const [isExpanded, setIsExpanded] = useState(false);
 
@@ -27,7 +28,7 @@ function Card({ image, name, description, expandedtext, images = [], jobPosition
                     &times;
                 </button>
             )}
-            <img className="card-image" alt="Profile picture" src={image} />
+            <img className="card-image" src={image} />
             <h2 className="card-title">{name}</h2>
             <p className="card-text">{description}</p>
 
@@ -35,10 +36,20 @@ function Card({ image, name, description, expandedtext, images = [], jobPosition
             {jobPositions.length > 0 && (
                 <div className="job-info">
                     {jobPositions.map((job, index) => (
-                        <div key={index} className="job-position-info">
-                            <img className="company-logo" src={job.companyLogo} alt={`${job.companyName} logo`} />
-                            <p className="job-position">{job.position}</p>
-                            <p className="company-name">{job.companyName}</p>
+                        <div key={index}>
+                            {/* Job Position Info */}
+                            <div className="job-position-info">
+                                <img className="company-logo" src={job.companyLogo} alt={`${job.companyName} logo`} />
+                                    <p className="job-position">{job.position}</p>
+                                    <p className="company-name">{job.companyName}</p>
+                            </div>
+                            
+                            {/* Job Description (Only Visible in Expanded View) */}
+                            {isExpanded && (
+                                <div className="job-description">
+                                    {job.description}
+                                </div>
+                            )}
                         </div>
                     ))}
                 </div>
@@ -82,7 +93,6 @@ function Card({ image, name, description, expandedtext, images = [], jobPosition
 }
 
 Card.defaultProps = {
-    image: "https://via.placeholder.com/100",
     name: "[insert name]",
     expandedtext: "[insert text]",
     description: "[insert description]",

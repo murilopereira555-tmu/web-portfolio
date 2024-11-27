@@ -25,12 +25,12 @@ const ThemeButton = () => {
         <span className="toggle-ball">
           {/* Sun and Moon icons, visible depending on theme */}
           <img
-            src="https://static-00.iconduck.com/assets.00/mode-light-icon-2048x2048-no286vfd.png"
+            src="https://static.thenounproject.com/png/4808961-200.png"
             alt="Sun Icon"
             className={`icon sun-icon ${theme === "light" ? "visible" : "hidden"}`}
           />
           <img
-            src="https://static-00.iconduck.com/assets.00/mode-dark-icon-2048x2037-ue3955wk.png"
+            src="https://cdn-icons-png.flaticon.com/512/6714/6714978.png"
             alt="Moon Icon"
             className={`icon moon-icon ${theme === "dark" ? "visible" : "hidden"}`}
           />
