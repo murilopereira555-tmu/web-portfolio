@@ -32,29 +32,6 @@ function Card({ image, name, description, expandedtext, images = [], jobPosition
             <h2 className="card-title">{name}</h2>
             <p className="card-text">{description}</p>
 
-            {/* Display job positions for Professional Experience */}
-            {jobPositions.length > 0 && (
-                <div className="job-info">
-                    {jobPositions.map((job, index) => (
-                        <div key={index}>
-                            {/* Job Position Info */}
-                            <div className="job-position-info">
-                                <img className="company-logo" src={job.companyLogo} alt={`${job.companyName} logo`} />
-                                    <p className="job-position">{job.position}</p>
-                                    <p className="company-name">{job.companyName}</p>
-                            </div>
-                            
-                            {/* Job Description (Only Visible in Expanded View) */}
-                            {isExpanded && (
-                                <div className="job-description">
-                                    {job.description}
-                                </div>
-                            )}
-                        </div>
-                    ))}
-                </div>
-            )}
-
             {isExpanded && (
                 <div className="card-extra-content">
                     <p>{expandedtext}</p>
@@ -116,6 +93,35 @@ function Card({ image, name, description, expandedtext, images = [], jobPosition
 
                 </div>
             )}
+
+            {/* Display job positions for Professional Experience */}
+            {jobPositions.length > 0 && (
+                <div className="job-info">
+                    {jobPositions.map((job, index) => (
+                        <div key={index}>
+                            {/* Job Position Info */}
+                            <div className="job-position-info">
+                                <img className="company-logo" src={job.companyLogo} alt={`${job.companyName} logo`} />
+                                    <p className="job-position">{job.position}</p>
+                                    <p className="company-name">{job.companyName}</p>
+                                    {isExpanded && (
+                                        <>
+                                        <div className="job-description">
+                                            {job.description}
+                                        </div>
+                                        <div className="job-date">
+                                            {job.date}
+                                        </div>
+                                        </>
+                                    )}
+                            </div>
+                            
+                        </div>
+                    ))}
+                </div>
+            )}
+
+           
             <div className="card-arrow">➔</div>
         </div>
     );

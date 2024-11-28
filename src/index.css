@@ -54,7 +54,8 @@
 
 .job-position-info {
   display: flex; /* Use flexbox for alignment */
-  align-items: center; /* Center vertically */
+  align-items: center;
+  flex-direction: row; /* Center vertically */
   margin-bottom: 20px; /* Space between job entries */
   border-color: white;
 }
@@ -117,17 +118,11 @@ body.light .company-logo {
   background-color: rgba(255, 255, 255, 0.199); /* Optional: background for visibility */
 }
 
-/* Job Description (only visible in expanded view) */
-.job-description {
-  font-size: 14px;
-  color: rgba(255, 255, 255, 0.8);
-}
 
 /* Job Description (only visible in expanded view) */
 .job-description {
   font-size: 14px;
   color: rgba(255, 255, 255, 0.8);
-  padding-left: 20px;
 }
 
 /* Styles only for when the card is expanded */
@@ -135,12 +130,6 @@ body.light .company-logo {
 /* Adjustments for expanded view job info */
 .card-expanded .job-info {
   margin-left: 10%;  /* Indent job info to the right in expanded view */
-}
-
-.card-expanded .job-position-info {
-  display: flex; /* Use flexbox for alignment */
-  align-items: center; /* Center vertically */
-  border-color: white;
 }
 
 /* Expanded Job Position and Company Styling */
@@ -153,10 +142,7 @@ body.light .company-logo {
 .card-expanded .job-description {
   font-size: 15px;
   color: #ccc; /* Light color for description */
-  padding-left: 20px; 
-  padding-bottom: 20px;/* Indentation for better alignment */
-  margin-right: 20%;
-  margin-left: 20%;
+ 
 }
 
 /*Light mode job desc*/
@@ -167,6 +153,13 @@ body.light .job-description {
 .card-expanded .job-position-info {
   border-top: 1px solid #444;
   padding-top: 20px;
+  display: grid; /* Use grid for layout */
+  grid-template-columns: 10% 10% 25% 30% 1fr;
+  align-items: left; /* Align items vertically */
+  column-gap: 1px; /* Space between columns */
+  row-gap: 10px;
+  margin-bottom: 20px;
+  margin-right: 5%;
 }
 
 /* Divider styles */
@@ -733,3 +726,4 @@ body.dark .education-table h3 {
 body.dark .education-table table{
   color:hsl(0, 0%, 40%);
 }
+
