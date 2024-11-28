@@ -664,6 +664,7 @@ footer {
 
 
 /*Styling for the education table*/
+
 .education-table {
   margin: 30px;
   padding: 10px;
@@ -727,3 +728,47 @@ body.dark .education-table table{
   color:hsl(0, 0%, 40%);
 }
 
+/*Styling for Lab10 Card*/
+.card-expanded .lab10-div {
+  margin-right: 20%;
+  margin-left: 10%;
+  color: white;
+}
+
+.card-expanded .lab10-div h3{
+  text-decoration: underline;
+}
+
+.card-expanded .works-cited p{
+  text-align: left;
+  padding-bottom: 10px;
+}
+
+body.light .lab10-div {
+  color: black
+}
+
+.socials {
+  display: flex;
+  align-items: row;
+  gap: 2%;
+}
+
+.socials a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.socials i {
+  font-size: 24px; /* Adjust size */
+  padding-top: 18px;
+  padding-left: 10%;
+}
+
+.socials h3 {
+  padding-left: 2%;
+}
+
+.socials a:hover i {
+  color: #007BFF; /* Change color on hover (blue for the website) */
+}

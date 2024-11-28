@@ -59,7 +59,9 @@ function Footer() {
                     name={"Lab10"}
                     description={"Submission for Lab10"}
                     expandedtext={"SEO and SMO Techniques"}
+                    cardType={"lab10"}
                 > 
+                <p>Hello</p>
             </Card>
         </Popup>
       )}
