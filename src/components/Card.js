@@ -141,8 +141,8 @@ function Card({ image, name, description, expandedtext, images = [], jobPosition
                                 <p><b>Social Media Icons</b></p>
                                 <p>The Education Card on my portfolio main page has an instagram icon which leads to the university instagram</p>
 
-                                <p><b>External Linking</b></p>
-                                <p>Additionally, for the SEO Technique chose, I have linked every course listed in the education card and in the table to the relevant course website by clicking on the course code.</p>
+                                <p><b>SEO Technique</b></p>
+                                <p>Additionally, I have chose to implement "External Linking" as my SEO technique. As such, I have linked every course listed in the education card and in the table to the relevant course website by clicking on the course code.</p>
 
                             </div>
 
