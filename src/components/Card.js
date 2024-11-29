@@ -244,7 +244,7 @@ function Card({ image, altText, name, description, expandedtext, images = [], jo
                             {/* Job Position Info */}
                             <div className="job-position-info">
                                 <img className="company-logo" src={job.companyLogo} alt={job.companyAlt} />
-                                    <p className="job-position">{job.position}</p>
+                                    <h3 className="job-position">{job.position}</h3>
                                     <p className="company-name">{job.companyName}</p>
                                     {isExpanded && (
                                         <>

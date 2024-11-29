@@ -21,12 +21,12 @@ function Header() {
         <div className="nav-logo">Murilo Pereira</div>
         <ul className="nav-links">
           <li className="nav-item">
-            <a href="https://www.linkedin.com/in/murilo-pereira-it/" target="_blank" rel="noopener noreferrer">
+            <a href="https://www.linkedin.com/in/murilo-pereira-it/" target="_blank" rel="noopener noreferrer" aria-label="Opens New Tab">
               LinkedIn
             </a>
           </li>
           <li className="nav-item">
-            <a href="https://drive.google.com/file/d/1vpeqR-ronYRkARtulJB0cCf876Ao_0ml/view?usp=sharing" target="_blank" rel="noopener noreferrer">
+            <a href="https://drive.google.com/file/d/1vpeqR-ronYRkARtulJB0cCf876Ao_0ml/view?usp=sharing" target="_blank" rel="noopener noreferrer" aria-label="Opens New Tab">
               Resume
             </a>
           </li>
