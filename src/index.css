@@ -200,7 +200,7 @@ body.light .job-description {
 .card-expanded .card-title {
   margin-left: 20%;
   margin-top: 25px; /* Offset title to the right of the image */
-  font-size: 1.5em; /* Adjust font size */
+  font-size: 3em; /* Adjust font size */
 }
 
 .card-expanded .card-text,
@@ -329,6 +329,11 @@ body.light .job-description {
   margin-left: 20px; /* Space between links */
 }
 
+.nav-item:hover {
+  background-color: #0056b3;
+  text-decoration: underline;
+}
+
 .nav-item a {
   text-decoration: none; /* Remove underline */
   color: white; /* Link text color */
@@ -350,7 +355,7 @@ body.light .job-description {
 
 .contact-button:hover {
   text-decoration: none;
-  color: #007bff; /* Same hover effect as links */
+  color: none; /* Same hover effect as links */
 }
 
 .nav-item {
@@ -451,18 +456,24 @@ body.dark .navigation-bar {
 
 body.light .nav-logo, 
 body.light .nav-item a {
-  color: #000;
+  color: #000 !important;
+}
+
+body.light .nav-item {
+  font-weight: bold;
 }
 
 body.dark .nav-logo, 
 body.dark .nav-item a {
-  color: #fff;
+  color: #fff !important;
 }
 
 /* Additional styles for the dark theme */
 body.dark .card-expanded {
   background-color: #222;
 }
+
+
 
 body.dark .close-button {
   color: #fff;
@@ -477,6 +488,12 @@ footer {
   display: flex;
   justify-content: space-between;
   align-items: center;
+}
+
+.footer .labs-button,
+.footer .acc-button {
+  margin-bottom: 10px;
+  margin-left: 10px;
 }
 
 .footer-content {
@@ -672,7 +689,24 @@ footer {
 }
 
 
-/*Styling for the education table*/
+/*Styling for the education card*/
+
+.card-expanded.education .card-extra-content {
+  margin-right: 5%;
+  margin-left: 5%;
+  margin-top: 3%;
+}
+
+.education .expandedtext {
+  margin-left: 10%;
+  margin-right: 10%;
+}
+
+.card-expanded.education .card-title,
+.card-expanded.education .card-text {
+  text-align: left;
+  padding-top: 10px;
+}
 
 .education-table {
   margin: 30px;
@@ -889,4 +923,124 @@ body.dark .project-card {
 /*Fixed visited links in dark mode*/
 body.dark a:visited {
  color: #bf70ff;
+}
+
+/*About Me page styling*/
+
+/* About Me Card Styling */
+.card-expanded.about-me {
+  display: flex;
+  flex-direction: column; /* Ensure vertical stacking of content */
+  color: #f4f4f4; /* Softer white for text */
+  background-color: #1e1e1e; /* Dark background for better contrast */
+  border-radius: 10px; /* Add subtle rounding to edges */
+  padding: 20px; /* Inner spacing */
+  margin-right: 20px; /* Add right margin */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
+  overflow-x: hidden; /* Prevent horizontal overflow */
+  max-width: calc(100% - 40px); /* Prevent card from exceeding the screen width */
+  box-sizing: border-box; /* Include padding in width calculations */
+}
+
+/*Expanded Text*/
+.about-me .expandedtext {
+  margin-left: 3%;
+  margin-right: 3%;
+  font-style: italic;
+  color: #b1b1b1;
+}
+
+/* Additional Images Section */
+.about-me .additional-images {
+  display: grid; /* Switch to grid layout */
+  grid-template-columns: repeat(2, 1fr); /* 2 columns of equal width */
+  grid-gap: 20px; /* Space between items */
+  margin-top: 20px; /* Add spacing between content sections */
+  width: 100%;
+  margin-bottom: 2%;
+}
+
+
+/* Image Wrapper */
+.about-me .image-wrapper {
+  display: flex;
+  align-items: flex-start; /* Align image and text to the top */
+  gap: 20px; /* Space between image and text */
+  width: 100%;
+  overflow: hidden; /* Prevent content overflow */
+}
+
+/* Image Styling */
+.about-me .extra-image {
+  width: 200px; /* Set a fixed width for all images */
+  height: auto; /* Maintain aspect ratio */
+  max-height: 220px; /* Limit height for consistency */
+  border-radius: 8px; /* Smooth rounded corners */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow for images */
+  flex-shrink: 0; /* Prevent image size from affecting layout */
+  margin-left: 5%;
+}
+
+/* Image Details */
+.about-me .image-details {
+  display: flex;
+  flex-direction: column; /* Stack text vertically */
+  gap: 5px; /* Space between title and description */
+  justify-content: flex-start; /* Align content to the top */
+  color: #dcdcdc; /* Subtle grey for descriptions */
+  overflow-x: hidden; /* Prevent text overflow */
+  flex-grow: 1; /* Allow text section to fill available space */
+}
+
+/* Image Title */
+.about-me .image-title {
+  font-weight: bold;
+  font-size: 1.2em; /* Emphasize title */
+  color: #ffffff; /* Bright white text for title */
+  text-align: left; /* Ensure title aligns to the left */
+  margin: 0; /* Remove any default margins */
+}
+
+/* Image Description */
+.about-me .image-description {
+  font-size: 1em; /* Maintain readability */
+  line-height: 1.4; /* Improve spacing between lines */
+  color: #c0c0c0; /* Lighter grey for contrast */
+  text-align: left; /* Ensure description aligns to the left */
+  margin-right: 5%; /* Remove any default margins */
+}
+
+/* Card Content */
+.about-me .card-extra-content {
+  padding: 15px 20px; /* Adjust padding for better layout */
+  margin-top: 15px;
+  background: rgba(255, 255, 255, 0.05); /* Subtle background highlight */
+  border-radius: 8px;
+  width: 75%;
+  line-height: 1.6; /* Improve text spacing */
+  color: #e0e0e0;
+}
+
+.card-expanded.about-me {
+  text-align: left;
+}
+
+.card-expanded.about-me .card-title {
+  font-size: 50px;
+}
+
+/*light mode*/
+body.light .about-me .image-title, 
+.about-me .image-description,
+.about-me .expandedtext {
+  color: #000000;
+}
+
+body.light .about-me .card-extra-content {
+  background-color: #d6d6d6;
+}
+
+body.dark .about-me .image-description, 
+body.dark .about-me .expandedtext{
+  color: #b1b1b1;
 }

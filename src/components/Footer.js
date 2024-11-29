@@ -7,20 +7,28 @@ import Card from './Card.js';
 
 function Footer() {
   const [isLabsPopupOpen, setIsLabsPopupOpen] = useState(false);
+  const [isAccPopupOpen, setIsAccPopupOpen] = useState(false);
 
   const toggleLabsPopup = () => {
     setIsLabsPopupOpen(!isLabsPopupOpen); // Fixed to toggle Lab 8 popup
   };
 
+  const toggleAccPopup = () => {
+    setIsAccPopupOpen(!isAccPopupOpen);
+  }
+
   return (
     <footer className="footer">
       <div className="footer-content">
         <ThemeButton />
-        <ContrastButton />
-        <TextSizeButton />
         <button className="labs-button" onClick={toggleLabsPopup}>
           Labs
         </button>
+        
+        <button className="acc-button" onClick={toggleAccPopup}>
+          Accessibility
+        </button>
+
         <p className="copyright">
           &copy; {new Date().getFullYear()} Murilo Pereira
         </p>
@@ -29,7 +37,7 @@ function Footer() {
 
       {/* Lab 8 Popup */}
       {isLabsPopupOpen && (
-        <Popup isOpen={isLabsPopupOpen} closePopup={toggleLabsPopup}>
+        <Popup isOpen={isLabsPopupOpen} closePopup={toggleLabsPopup} className="labs-popup">
           <Card //Using a card element since the lab was originally done so
                     name={"Lab 8"}
                     description={"Submission for Lab8"}
@@ -65,6 +73,15 @@ function Footer() {
             </Card>
         </Popup>
       )}
+
+      {/*Acc Popup button*/}
+      {isAccPopupOpen && (
+        <Popup isOpen={isAccPopupOpen} closePopup={toggleAccPopup} className="acc-popup">
+          <TextSizeButton/>
+          <ContrastButton/>
+        </Popup>
+      )}
+
     </footer>
   );
 }

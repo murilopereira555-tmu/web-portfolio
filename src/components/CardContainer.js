@@ -3,6 +3,9 @@ import Card from './Card';
 import './CardContainer.css';
 import vscodeimg from './images/vscode.png';
 import appusageimg from './images/Application Usage View.jpg';
+import sushiimg from './images/sushi.jpg';
+import skylineimg from './images/view.jpg';
+import coffeimg from './images/coffee-cupping.jpg';
 
 function CardContainer() {
     const cards = [
@@ -11,24 +14,31 @@ function CardContainer() {
             name: "About Me",
             description: "Experienced and Passionate Leader",
             expandedtext: "Despite my professional skills and background, I have a diverse set of hobbies and passions that showcase who I am as a person. Namely, I have always been interested in culinary excellence and fine dining, having worked briefly as a sushi chef during highschool. I enjoy trying new things and other realms within the cullinary arts such as Coffee, Wine, and Tea.",
-            images: [{ 
-                url: "https://cdn.discordapp.com/attachments/1108482530417594461/1306057478772887652/IMG_0477.jpg?ex=67486610&is=67471490&hm=023a688575e672855acab1fe7fc2f2f38674b28519b56b32e1f5ac7b05b632eb&", 
-                title: "View from My Appartment, Toronto", 
-                description: "Date: Nov 10th, 2024",
+            images: [{
+                url: "https://upload.wikimedia.org/wikipedia/en/thumb/0/05/Flag_of_Brazil.svg/640px-Flag_of_Brazil.svg.png",
+                title: "Brazilian",
+                description: "I was born in the beautiful city of Sao Paulo, Brazil. Although I moved to Canada at the young age of 7, I still speak portuguese fluently with my family and carry over my heritage with my love of football and national pride!",
+                altText: "The flag of the South American Nation of Brazil."
+            },
+            { 
+                url: skylineimg,
+                title: "Toronto Resident", 
+                description: "Currently, I live in downtown toronto as I finish my studies. The image attached is the view from my appartment, one of my favourite parts of living in Toronto! However, I will be moving out at the end of December as I move into my final semester of study sadly.",
                 altText: "The Toronto city skyline in the nightime rain with several apartment buildings that have a few units with their lights on, below there is some light trafic on the roads."
             },
             { 
-                url: "https://media.discordapp.net/attachments/1108482530417594461/1306057479498498180/IMG_0466.jpg?ex=67486610&is=67471490&hm=fae784bf35d36854c6a5913fd14b05b3a1b26baf5fb5df6f2cc962aeade14ad9&=&format=webp&width=507&height=676", 
-                title: "Coffee Cupping event at Subtext Roasters, Toronto", 
-                description: "Date: Nov 9th, 2024",
+                url: coffeimg,
+                title: "Coffee Nerd", 
+                description: "My friends and family often call me a Coffee Nerd as I am deeply passionate about specialty coffee and the variety of flavours it offers. The image associated is of a cupping event I attended in November of this year at Subtext Roasters in toronto. Cupping is a professional and streamlined way of tasting speciality coffee aimed at removing variation and being able to addequetly assess the quality of a coffee.",
                 altText: "A table at the forefront with multiple ceramic cups for coffee tasting. A woman in the background is pouring water into the cups from a kettle."
             },
             { 
-                url: "https://media.discordapp.net/attachments/1108482530417594461/1306057480253734974/IMG_0450.jpg?ex=67486610&is=67471490&hm=eed5a686ecb4b3d9e7e33686cc5ff170e77efc59ae600f303e7cd49046b2e543&=&format=webp&width=507&height=676", 
-                title: "Homemade Sushi, Toronto", 
-                description: "Date: Nov 6th, 2024",
+                url: sushiimg, 
+                title: "Professional Chef", 
+                description: "Despite my professional carreer aspirations, One day I am certain that I will open and run my own restaurant. Cooking is my biggest passion, ever since I was young I was enfatuated with the world of culinary arts. So much so that when I turned 16 I worked at my way up from Dish washer to associate sushi chef at a local japanese restaurant.",
                 altText: "A white plate with multiple salmon sushi rolls topped with micro green vegetables along with 2 salmon nigiri pieces topped with green onions."
-            }],
+            }
+        ],
             cardType: "about-me", // Added type for styling
         },
         {

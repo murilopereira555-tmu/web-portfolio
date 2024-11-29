@@ -34,7 +34,7 @@ function Card({ image, name, description, expandedtext, images = [], jobPosition
 
             {isExpanded && (
                 <div className="card-extra-content">
-                    <p>{expandedtext}</p>
+                    <p className='expandedtext'>{expandedtext}</p>
                     
                     {/* Additional Images and Descriptions Section */}
                     <div className="additional-images">
@@ -257,17 +257,6 @@ function Card({ image, name, description, expandedtext, images = [], jobPosition
                                         </>
                                     )}
                             </div>
-                            {job.tags && job.tags.length > 0 && (
-                                            <div className="tags-section">
-                                                <div className="tags-container">
-                                                    {job.tags.map((tag, tagIndex) => (
-                                                        <span className="tag" key={tagIndex}>
-                                                            {tag}
-                                                        </span>
-                                                    ))}
-                                                </div>
-                                            </div>
-                            )}
                         </div>
                     ))}
                 </div>
