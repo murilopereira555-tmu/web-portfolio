@@ -494,6 +494,13 @@ footer {
 .footer .acc-button {
   margin-bottom: 10px;
   margin-left: 10px;
+  background-color: #333;
+}
+
+body.light  .labs-button,
+body.light .acc-button {
+  background-color: #ffffff;
+  color: #000;
 }
 
 .footer-content {
