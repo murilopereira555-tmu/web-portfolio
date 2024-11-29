@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import AudioPlayer from './AudioPlayer';
 
 
-function Card({ image, name, description, expandedtext, images = [], jobPositions = [], cardType, includeAudio, courses, projects }) {
+function Card({ image, altText, name, description, expandedtext, images = [], jobPositions = [], cardType, includeAudio, courses, projects }) {
     const [isExpanded, setIsExpanded] = useState(false);
 
     const [showAltText, setShowAltText] = useState(false); 
@@ -28,7 +28,7 @@ function Card({ image, name, description, expandedtext, images = [], jobPosition
                     &times;
                 </button>
             )}
-            <img className="card-image" src={image} />
+            <img className="card-image" src={image} alt={altText}/>
             <h2 className="card-title">{name}</h2>
             <p className="card-text">{description}</p>
 
@@ -243,7 +243,7 @@ function Card({ image, name, description, expandedtext, images = [], jobPosition
                         <div key={index}>
                             {/* Job Position Info */}
                             <div className="job-position-info">
-                                <img className="company-logo" src={job.companyLogo} alt={`${job.companyName} logo`} />
+                                <img className="company-logo" src={job.companyLogo} alt={job.companyAlt} />
                                     <p className="job-position">{job.position}</p>
                                     <p className="company-name">{job.companyName}</p>
                                     {isExpanded && (

@@ -11,6 +11,7 @@ function CardContainer() {
     const cards = [
         {
             image: "https://media.licdn.com/dms/image/v2/D5603AQFNm_A77PZh0w/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1680680808569?e=1736380800&v=beta&t=nvvUBEMlHxzLfWvgBiwxIcNqJRoEBau4tZItR0_BQaI",
+            altText: "A professional headshot of the portfolio owner (Murilo Pereira) wearing a blue suit and blue tie with a dark background.",
             name: "About Me",
             description: "Experienced and Passionate Leader",
             expandedtext: "Despite my professional skills and background, I have a diverse set of hobbies and passions that showcase who I am as a person. Namely, I have always been interested in culinary excellence and fine dining, having worked briefly as a sushi chef during highschool. I enjoy trying new things and other realms within the cullinary arts such as Coffee, Wine, and Tea.",
@@ -43,6 +44,7 @@ function CardContainer() {
         },
         {
             image: "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9f/TMU_logo.svg/800px-TMU_logo.svg.png",
+            altText: "The Blue and Yellow Logo of Toronto Metropolitan University",
             name: "Education",
             description: "5th Year BTM Co-op Student, Philosophy Minor",
             images: [],
@@ -68,6 +70,7 @@ function CardContainer() {
                     position: "Experienced Consultant",
                     companyName: "Cyber Risk & Emerging Tech",
                     companyLogo: "https://upload.wikimedia.org/wikipedia/commons/f/f2/Logo-pwc.png",
+                    companyAlt: "PricewaterhouseCoopers LLP Logo",
                     description: "Worked directly with clients to perfrom cyber security maturity assessments and provide actionable recomendations on improving security posture.",
                     date: "September-December 2023 & May-August 2024"
                 },
@@ -75,12 +78,14 @@ function CardContainer() {
                     position: "Product Manager",
                     companyName: "Avenue Eco",
                     companyLogo: "https://blog.avenuecode.com/hs-fs/hubfs/Avenue%20Code%20New%20Logos%20-%202023/Avenue%20Code-primary%20versions_logo%20white%20avenue%20code%20endorsement%202.png?width=1180&name=Avenue%20Code-primary%20versions_logo%20white%20avenue%20code%20endorsement%202.png",
+                    companyAlt: "Avenue Code LTD San Francisco Logo",
                     description: "Within a start-up environment, I successfuly produced results in an agile manner, developing highly detailed user stories and requirements for new features. In particular, I was responsible for the development of a skill matrix function, allowing managers to track the skills of their workforce.",
                     date: "May-August 2023"
                 },
                 {
                     position: "Systems Analyst",
                     companyName: "i-Stat R&D",
+                    companyAlt: "Abbott Pharmaceuticals Logo",
                     companyLogo: "https://mlt.org/wp-content/uploads/2018/04/logo-1.png",
                     description: "Worked on the management of the clinical research system which was responsible for the transmission of clinical trial data from over 70 sites accross the US to our Electronic Trial Master File database.",
                     date: "May-December 2022"
@@ -89,6 +94,7 @@ function CardContainer() {
                     position: "Head Coach",
                     companyName: "LOL Esports",
                     companyLogo: "https://cdn.thespike.gg/Teams%252010%2FTMU%20ESPORTS_1668436249432.png",
+                    companyAlt: "Toronto Metropolitan University Atheltics Logo",
                     description: "Led overall team strategy, draft, and identity, while fostering a collaborative environment to achieve results and accelerate player improvement. Made playoffs during first season with a top 3 placement within the eastern conference.",
                     date: "January 2021 - May 2022",
                 },
@@ -136,6 +142,7 @@ function CardContainer() {
                 //Pass the card elements
                     key={index}
                     image={card.image}
+                    altText={card.altText}
                     name={card.name}
                     description={card.description}
                     expandedtext={card.expandedtext}  
