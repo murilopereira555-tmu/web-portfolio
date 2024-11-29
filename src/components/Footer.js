@@ -52,7 +52,7 @@ function Footer() {
                         description: "Date: Nov 6th, 2024",
                         altText: "A white plate with multiple salmon sushi rolls topped with micro green vegetables along with 2 salmon nigiri pieces topped with green onions."
                     }]} // Pass images with titles and descriptions
-                    cardType={"projects"} // Pass the card type for styling
+                    cardType={"lab8"} // Pass the card type for styling
                     includeAudio={true}
                 />
             <Card 

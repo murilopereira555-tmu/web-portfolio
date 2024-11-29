@@ -1,6 +1,8 @@
 import React from 'react';
 import Card from './Card';
 import './CardContainer.css';
+import vscodeimg from './images/vscode.png';
+import appusageimg from './images/Application Usage View.jpg';
 
 function CardContainer() {
     const cards = [
@@ -27,7 +29,7 @@ function CardContainer() {
                 description: "Date: Nov 6th, 2024",
                 altText: "A white plate with multiple salmon sushi rolls topped with micro green vegetables along with 2 salmon nigiri pieces topped with green onions."
             }],
-            cardType: "projects", // Added type for styling
+            cardType: "about-me", // Added type for styling
         },
         {
             image: "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9f/TMU_logo.svg/800px-TMU_logo.svg.png",
@@ -78,38 +80,42 @@ function CardContainer() {
                     companyName: "LOL Esports",
                     companyLogo: "https://cdn.thespike.gg/Teams%252010%2FTMU%20ESPORTS_1668436249432.png",
                     description: "Led overall team strategy, draft, and identity, while fostering a collaborative environment to achieve results and accelerate player improvement. Made playoffs during first season with a top 3 placement within the eastern conference.",
-                    date: "January 2021 - May 2022"
+                    date: "January 2021 - May 2022",
                 },
             ],
             expandedtext: "An experienced and passionate leader who enjoys working in fast paced collaborative team environments to build strong working relationships, develop innovative strategies, and achieve success.",
             cardType: "professional-experience" // Added type for styling
         },
         {
-            //Used this for L8
-            //Decided to use image links to discord because it is much easier to import liek this on react.
+            //Projects Card
             name: "Projects",
-            description: "My Submission items for L8. Accessibility",
-            expandedtext: "Here are my images, alt text, and audio player",
-            images: [{ 
-                url: "https://cdn.discordapp.com/attachments/1108482530417594461/1306057478772887652/IMG_0477.jpg?ex=67486610&is=67471490&hm=023a688575e672855acab1fe7fc2f2f38674b28519b56b32e1f5ac7b05b632eb&", 
-                title: "View from My Appartment, Toronto", 
-                description: "Date: Nov 10th, 2024",
-                altText: "The Toronto city skyline in the nightime rain with several apartment buildings that have a few units with their lights on, below there is some light trafic on the roads."
-            },
-            { 
-                url: "https://media.discordapp.net/attachments/1108482530417594461/1306057479498498180/IMG_0466.jpg?ex=67486610&is=67471490&hm=fae784bf35d36854c6a5913fd14b05b3a1b26baf5fb5df6f2cc962aeade14ad9&=&format=webp&width=507&height=676", 
-                title: "Coffee Cupping event at Subtext Roasters, Toronto", 
-                description: "Date: Nov 9th, 2024",
-                altText: "A table at the forefront with multiple ceramic cups for coffee tasting. A woman in the background is pouring water into the cups from a kettle."
-            },
-            { 
-                url: "https://media.discordapp.net/attachments/1108482530417594461/1306057480253734974/IMG_0450.jpg?ex=67486610&is=67471490&hm=eed5a686ecb4b3d9e7e33686cc5ff170e77efc59ae600f303e7cd49046b2e543&=&format=webp&width=507&height=676", 
-                title: "Homemade Sushi, Toronto", 
-                description: "Date: Nov 6th, 2024",
-                altText: "A white plate with multiple salmon sushi rolls topped with micro green vegetables along with 2 salmon nigiri pieces topped with green onions."
-            }],
+            description: "Some things I have worked on or am currently working on!",
+            expandedtext: "Through my school years I have been able to work on a variety of projects ranging from technical programing such as this website itself to philosophy research papers!",
+            projects: [
+                {
+                    title: "Web Portfolio",
+                    description: "This is the very website you are currently browsing. It was built from scratch using tools such as VScode and github to program the site in React.js, HTML, and CSS.",
+                    link: "https://github.com/murilopereira555-tmu/web-portfolio",
+                    linktitle: "Github Repository",
+                    image: vscodeimg,
+                    skills: ["React.js", "JavaScript","HTML", "CSS", "GIT", "Node.js", "Web Design", "VScode"]
+                },
+                {
+                    title: "Philosophy Research Paper (Proposal)",
+                    description: "A proposal for a research paper exploring metaphysical questions about identity. The final paper shall be published before the end of the year :)",
+                    link: "https://docs.google.com/document/d/1sM9vOYcRwZ9z9MkJBoIFftL7Ik87BqW82Oh6YYIRRZ4/edit?usp=sharing",
+                    linktitle: "View Full Paper", 
+                    iframeSrc: "https://docs.google.com/document/d/e/2PACX-1vTNrM5euX2zKQChqp2nCWnVOngYR9xCsqhI2vT6k6eMkH4A50vKkD1LkkFoK6Au_mUPh6P_4oyhZV_h/pub?embedded=true", 
+                },
+                {
+                    title: "Enterprise Architecture: Application Usage Diagram",
+                    description: "Among several Enterprise Architecture Diagrams, I worked on building out an entire application usage diagram and process for a tool rental company.",
+                    image: appusageimg, 
+                    imageAlt: "Enterprise Architecture Diagram",
+                    skills: ["Archimate", "TOGAF", "Enterprise Architecture", "Application Usage Infrastructure", "Business Process Management"]
+                },
+            ],
             cardType: "projects", // Added type for styling
-            includeAudio: true
         },
     ];
 
@@ -128,6 +134,7 @@ function CardContainer() {
                     cardType={card.cardType} 
                     includeAudio={card.includeAudio}
                     courses={card.courses || []} 
+                    projects={card.projects || []}
                 />
             ))}
         </div>

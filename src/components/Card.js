@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import AudioPlayer from './AudioPlayer';
 
 
-function Card({ image, name, description, expandedtext, images = [], jobPositions = [], cardType, includeAudio, courses }) {
+function Card({ image, name, description, expandedtext, images = [], jobPositions = [], cardType, includeAudio, courses, projects }) {
     const [isExpanded, setIsExpanded] = useState(false);
 
     const [showAltText, setShowAltText] = useState(false); 
@@ -56,6 +56,70 @@ function Card({ image, name, description, expandedtext, images = [], jobPosition
 
                     {/* Conditionally render AudioPlayer if includeAudio is true */}
                     {includeAudio && <AudioPlayer />}
+
+                    {/*Project Card*/}
+                    {cardType === "projects" && projects.length > 0 && (
+                        <div className="projects-content">
+                            {projects.map((project, index) => (
+                            <div className="project-card" key={index}>
+                                <h3>{project.title}</h3>
+                                <p>{project.description}</p>
+
+                                {project.link && (
+                                    <a href={project.link} target="_blank" rel="noopener noreferrer">
+                                     {project.linktitle}
+                                    </a>
+                                )}
+
+                                {project.iframeSrc && (
+                                    <div className="iframe-preview">
+                                        <iframe
+                                            src={project.iframeSrc}
+                                            title={project.title}
+                                            width="100%"
+                                            height="400"
+                                            style={{ border: "none" }}
+                                        />
+                                    </div>
+                                )}
+
+                                {project.image && (
+                                    <div className="expandable-image">
+                                        <img
+                                            src={project.image}
+                                            alt={project.imageAlt}
+                                            className="project-image"
+                                            width="50%"
+                                            onClick={() => {
+                                                const img = new Image();
+                                                img.src = project.image;
+                                                const newWindow = window.open("", "_blank");
+                                                newWindow.document.write(img.outerHTML);
+                                                newWindow.document.close();
+                                            }}
+                                        />
+                                        <p>Click image to expand</p>
+                                    </div>
+                                )}
+
+                                        {/* Skills Section */}
+                                {project.skills && project.skills.length > 0 && (
+                                <div className="skills-section">
+                                    <h4>Skills:</h4>
+                                    <div className="skills-tags">
+                                    {project.skills.map((skill, skillIndex) => (
+                                        <span className="skill-tag" key={skillIndex}>
+                                        {skill}
+                                        </span>
+                                    ))}
+                                    </div>
+                                </div>
+                                )}
+
+                            </div>
+                            ))}
+                        </div>
+                    )}
                         
                     {/* Education Table */}
                     {cardType === "education" && courses.length > 0 && (
@@ -193,7 +257,17 @@ function Card({ image, name, description, expandedtext, images = [], jobPosition
                                         </>
                                     )}
                             </div>
-                            
+                            {job.tags && job.tags.length > 0 && (
+                                            <div className="tags-section">
+                                                <div className="tags-container">
+                                                    {job.tags.map((tag, tagIndex) => (
+                                                        <span className="tag" key={tagIndex}>
+                                                            {tag}
+                                                        </span>
+                                                    ))}
+                                                </div>
+                                            </div>
+                            )}
                         </div>
                     ))}
                 </div>
@@ -212,7 +286,8 @@ Card.defaultProps = {
     images: [],
     jobPositions: [], // Default to an empty array for job positions
     cardType: "default", // Default card type to ensure compatibility
-    includeAudio: false
+    includeAudio: false,
+    projects: []
 };
 
 export default Card;
